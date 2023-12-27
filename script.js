@@ -5,7 +5,7 @@ var block = document.getElementById("block");
 var game = 1;
 var currentScore = document.querySelector(".Score");
 var score = 0;
-// let audioElement = new Audio(`SOUND.mp3`);
+let audioElement = new Audio(`SOUND.mp3`);
 
 function jump(){
   if(character.classList != "animate"){
@@ -24,6 +24,7 @@ var checkDead = setInterval(function(){
   if(blockLeft<40 && blockLeft>20 && characterTop>=130){
     block.style.animation = "none";
     block.style.display = "none";
+    audioElement.play();
     alert("u lose.");
     game = 0;
   }
